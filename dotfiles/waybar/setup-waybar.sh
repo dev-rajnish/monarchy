@@ -20,7 +20,7 @@
 #### ==> code
 set -e
 
-WAYBAR_REPO="https://github.com/yourusername/monarchy.git"
+WAYBAR_REPO="https://github.com/dev-rajnish/monarchy.git"
 WAYBAR_TEMP="/tmp/waybar-monarchy"
 WAYBAR_DEST="$HOME/.config/waybar"
 HYPR_CONFIG_DIR="$HOME/.config/hypr/hyprland.d"
