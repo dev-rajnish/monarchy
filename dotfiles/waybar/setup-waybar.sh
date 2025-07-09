@@ -81,7 +81,9 @@ fi
 
 # 6. Restart Waybar
 echo "[6/6] Restarting Waybar..."
-pkill waybar && waybar
+pkill waybar 
+sleep 1
+waybar
 
 echo "✅ Waybar setup complete under 'monarchy' 🍚"
 
