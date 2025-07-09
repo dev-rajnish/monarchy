@@ -72,7 +72,7 @@ mkdir -p "$HYPR_CONFIG_DIR"
 cp "$WAYBAR_DEST/src/$SERVICE_CONF_NAME" "$HYPR_CONFIG_DIR/"
 
 # 5. Tee to hyprland.conf 
-source "$WAYBAR_DEST/src/hyprland-exec-waybar-service.sh"
+source "$WAYBAR_DEST/src/deamon-services-waybar.sh"
 # 6. Restart Waybar
 echo "[6/6] Restarting Waybar..."
 pkill waybar 
