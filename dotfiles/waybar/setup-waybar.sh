@@ -28,6 +28,10 @@ HYPR_MAIN="$HOME/.config/hypr/hyprland.conf"
 SERVICE_CONF_NAME="hyprland-exec-waybar-services.conf"
 
 # 1. Clone only waybar folder from repo (sparse clone)
+if [ -d "$WAYBAR_TEMP" ]; then
+    rm -rf "$WAYBAR_TEMP"
+
+fi
 echo "[1/6] Cloning waybar config..."
 git clone --depth 1 --filter=blob:none --sparse "$WAYBAR_REPO" "$WAYBAR_TEMP"
 cd "$WAYBAR_TEMP"
@@ -36,6 +40,7 @@ git sparse-checkout set dotfiles/waybar
 # 2. Move to ~/.config/waybar (backup if exists)
 echo "[2/6] Setting up ~/.config/waybar..."
 if [ -d "$WAYBAR_DEST" ]; then
+    rm -rf "${WAYBAR_DEST}.before-monarchy"
     mv "$WAYBAR_DEST" "${WAYBAR_DEST}.before-monarchy"
     echo "→ Backed up existing waybar config to ~/.config/waybar.before-monarchy"
 fi
