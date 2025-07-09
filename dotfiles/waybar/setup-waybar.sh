@@ -71,14 +71,8 @@ echo "[4/6] Installing hyprland exec config..."
 mkdir -p "$HYPR_CONFIG_DIR"
 cp "$WAYBAR_DEST/src/$SERVICE_CONF_NAME" "$HYPR_CONFIG_DIR/"
 
-# 5. Tee to hyprland.conf if not already included
-if ! grep -q "$SERVICE_CONF_NAME" "$HYPR_MAIN"; then
-    echo "source = ${HYPR_CONFIG_DIR}/${SERVICE_CONF_NAME}" >> "$HYPR_MAIN"
-    echo "→ Added include to hyprland.conf"
-else
-    echo "→ Already included in hyprland.conf"
-fi
-
+# 5. Tee to hyprland.conf 
+source "$WAYBAR_DEST/src/hyprland-exec-waybar-service.conf"
 # 6. Restart Waybar
 echo "[6/6] Restarting Waybar..."
 pkill waybar 
