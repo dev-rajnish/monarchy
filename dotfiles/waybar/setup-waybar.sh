@@ -69,7 +69,7 @@ fi
 # 4. Copy hyprland service conf
 echo "[4/6] Installing hyprland exec config..."
 mkdir -p "$HYPR_CONFIG_DIR"
-cp "$WAYBAR_DEST/$SERVICE_CONF_NAME" "$HYPR_CONFIG_DIR/"
+cp "$WAYBAR_DEST/src/$SERVICE_CONF_NAME" "$HYPR_CONFIG_DIR/"
 
 # 5. Tee to hyprland.conf if not already included
 if ! grep -q "$SERVICE_CONF_NAME" "$HYPR_MAIN"; then
