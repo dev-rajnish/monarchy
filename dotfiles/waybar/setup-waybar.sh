@@ -44,8 +44,8 @@ mv "$WAYBAR_TEMP/dotfiles/waybar" "$WAYBAR_DEST"
 # 3. Check required dependencies
 echo "[3/6] Checking dependencies..."
 REQUIRED_PKGS=(
-    fuzzel hyprland wl-clipboard nwg-clipman swaync hyprshot waypaper
-    swww hyprpicker hyprideal pavucontrol wlogout wallust
+    fuzzel hyprland wl-copy nwg-clipman swaync hyprshot waypaper
+    swww hyprpicker  pavucontrol wlogout wallust
 )
 MISSING_PKGS=()
 for pkg in "${REQUIRED_PKGS[@]}"; do
@@ -64,7 +64,7 @@ fi
 # 4. Copy hyprland service conf
 echo "[4/6] Installing hyprland exec config..."
 mkdir -p "$HYPR_CONFIG_DIR"
-cp "$(dirname "$0")/$SERVICE_CONF_NAME" "$HYPR_CONFIG_DIR/"
+cp "$WAYBAR_DEST/$SERVICE_CONF_NAME" "$HYPR_CONFIG_DIR/"
 
 # 5. Tee to hyprland.conf if not already included
 if ! grep -q "$SERVICE_CONF_NAME" "$HYPR_MAIN"; then
@@ -76,8 +76,7 @@ fi
 
 # 6. Restart Waybar
 echo "[6/6] Restarting Waybar..."
-pkill waybar || true
-nohup waybar >/dev/null 2>&1 &
+pkill waybar && waybar
 
 echo "✅ Waybar setup complete under 'monarchy' 🍚"
 
