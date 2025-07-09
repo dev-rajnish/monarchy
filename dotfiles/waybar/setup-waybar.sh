@@ -18,7 +18,7 @@
 
 
 #### ==> code
-set -e
+#set -x
 
 WAYBAR_REPO="https://github.com/dev-rajnish/monarchy.git"
 WAYBAR_TEMP="/tmp/waybar-monarchy"
@@ -82,9 +82,10 @@ fi
 # 6. Restart Waybar
 echo "[6/6] Restarting Waybar..."
 pkill waybar 
-sleep 1
-waybar
+
+waybar -l off &
 
 echo "✅ Waybar setup complete under 'monarchy' 🍚"
 
+exit
 
