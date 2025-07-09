@@ -2,7 +2,7 @@
 # 5. Tee to hyprland.conf if not already included
 HYPR_CONF="$HOME/.config/hypr/hyprland.d/deamons-services-autostart.conf"
 
-if ! grep -q "sww-deamon"  "$HYPR_CONF"; then
+if ! grep -q "swww-daemon"  "$HYPR_CONF"; then
     echo "exec-once = swww-daemon &" >> "$HYPR_CONF"
 
 else

@@ -69,7 +69,6 @@ fi
 # 4. Copy hyprland service conf
 echo "[4/6] Installing hyprland exec config..."
 mkdir -p "$HYPR_CONFIG_DIR"
-cp "$WAYBAR_DEST/src/$SERVICE_CONF_NAME" "$HYPR_CONFIG_DIR/"
 
 # 5. Tee to hyprland.conf 
 source "$WAYBAR_DEST/src/deamon-services-waybar.sh"
