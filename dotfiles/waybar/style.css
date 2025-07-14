@@ -1,12 +1,14 @@
 @import "colors.css";
 
+
 * {
   border: none;
   font-family: "Noto Sans";
   font-weight: 700;
   font-size: 14px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-right: -2px;
   margin-top: 0px;
   margin-bottom: 0px;
   min-height: 20px;
@@ -14,7 +16,10 @@
 
 window#waybar {
   background: @background;
+  color:transparent;
   min-height: 20px;
+  margin-left: -2px;
+  padding-left: 0px;
 }
 
 window#waybar.hidden {
@@ -22,23 +27,26 @@ window#waybar.hidden {
 }
 
 #window {
+
+  color:transparent;
   margin-bottom: 0px;
   transition: none;
-  color: @color2;
-  border-bottom: 2px solid @color2;
+  border-left: 2px solid @color2;
   border-radius: 0px;
 }
 
 #workspaces button {
-  color: @color7;
   border-radius: 2px;
-  margin-right: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
+  margin-bottom:3px;
+  padding-left:0px;
+  padding-right:20px;
+  border-left: 1px solid @color4;
+  color:@color7;
 }
 
 #workspaces button.active {
-  background-color: @color2;
+  background-color: @color4;
+  border-left: 1px solid @color7;
 }
 
 #workspaces button:hover {
@@ -46,8 +54,6 @@ window#waybar.hidden {
 }
 
 #network {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color5;
   border-bottom: 2px solid @color5;
@@ -55,8 +61,6 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color3;
   border-bottom: 2px solid @color3;
@@ -64,8 +68,6 @@ window#waybar.hidden {
 }
 
 #custom-hyprpicker {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color6;
   border-bottom: 2px solid @color6;
@@ -73,8 +75,6 @@ window#waybar.hidden {
 }
 
 #battery {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color7;
   border-bottom: 2px solid @color6;
@@ -107,15 +107,13 @@ window#waybar.hidden {
 }
 
 #backlight {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color10;
   border-bottom: 2px solid @color3;
   border-radius: 0px;
 }
 
-#clock {
+#clock,#pulseaudio {
   transition: none;
   color: @color6;
   border-bottom: 2px solid @color14;
@@ -123,8 +121,6 @@ window#waybar.hidden {
 }
 
 #memory {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color5;
   border-bottom: 2px solid @color5;
@@ -132,8 +128,6 @@ window#waybar.hidden {
 }
 
 #cpu {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color4;
   border-bottom: 2px solid @color4;
@@ -141,59 +135,51 @@ window#waybar.hidden {
 }
 
 #tray {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color6;
   background: transparent;
 }
 
 #custom-power {
-  margin-right: 8px;
-  padding-left: 10px;
-  padding-right: 5px;
   transition: none;
   color: @color0;
   background: @color1;
 }
 
 #custom-wallpaper {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color4;
   border-bottom: 2px solid @color2;
   border-radius: 0px;
 }
 
-#idle_inhibitor {
-  padding-left: 10px;
-  padding-right: 10px;
+#power-profiles-daemon,#temperature {
   transition: none;
-  color: @color1;
-  border-bottom: 2px solid @color1;
+  color: @color11;
+  border-bottom: 2px solid @color11;
+  border-radius: 0px;
+}
+#idle_inhibitor {
+  transition: none;
+  color: @color11;
+  border-bottom: 2px solid @color11;
   border-radius: 0px;
 }
 
 #custom-swaync {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
-  color: @color1;
-  border-bottom: 2px solid @color1;
+  color: @color5;
+  border-bottom: 2px solid @color5;
   border-radius: 0px;
 }
 
 #custom-home {
-  padding-left: 4px;
   transition: none;
-  color: @color14;
+  color: @color15;
   border-radius: 0px;
 }
 
 #custom-clipboard {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color3;
   border-bottom: 2px solid @color3;
@@ -201,16 +187,15 @@ window#waybar.hidden {
 }
 
 #custom-wlogout {
-  padding-left: 5px;
-  padding-right: 0px;
+  margin-bottom: -1px;
   transition: none;
-  color: @color3;
+  color: @color11;
+   border-bottom: 4px solid @color11;
+
   border-radius: 0px;
 }
 
 #custom-hyprshot {
-  padding-left: 10px;
-  padding-right: 10px;
   transition: none;
   color: @color2;
   border-bottom: 2px solid @color4;
