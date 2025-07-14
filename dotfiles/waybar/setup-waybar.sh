@@ -5,13 +5,9 @@
 # 2 move that folder to ~/.config/waybar if folder exist backup name=waybar.before-monarchy
 
 # 3 check for dependencies needed for waybar 
-  ## dependencies are fuzzel,hyprland,wl-clipboard,nwg-clipman,\
-  ##swaync,hyprshot,waypaper,swww,hyprpicker,hyprideal,pavucontrol,wlogout \
+  ## dependencies are waybar, fuzzel, hyprland, wl-clipboard, nwg-clipman,\
+  ##swaync, hyprshot, waypaper, swww, hyprpicker, pavucontrol, wlogout \
   ## wallust
-
-# 4 cp hyprland-deamon-waybar-services.conf to hypr/hyprland.d/
-  ## make required folder if not exist
-# 5 tee source = ~/.config/hypr/hyprland.d/hyprland-deamon-waybar-services.conf to ~/.config/hypr/hyprland.config
 
 # 6 restart waybar , pkill waybar && waybar
 
@@ -49,8 +45,8 @@ mv "$WAYBAR_TEMP/dotfiles/waybar" "$WAYBAR_DEST"
 # 3. Check required dependencies
 echo "[3/6] Checking dependencies..."
 REQUIRED_PKGS=(
-    fuzzel hyprland wl-copy nwg-clipman swaync hyprshot waypaper
-    swww hyprpicker  pavucontrol wlogout wallust
+    waybar fuzzel hyprland wl-copy nwg-clipman swaync hyprshot waypaper
+    swww hyprpicker  pavucontrol wlogout wallust brightnessctl wpctl playerctl
 )
 MISSING_PKGS=()
 for pkg in "${REQUIRED_PKGS[@]}"; do
@@ -66,19 +62,12 @@ else
     echo "✅ All dependencies found"
 fi
 
-# 4. Copy hyprland service conf
-echo "[4/6] Installing hyprland exec config..."
-mkdir -p "$HYPR_CONFIG_DIR"
-
-# 5. Tee to hyprland.conf 
-source "$WAYBAR_DEST/src/deamon-services-waybar.sh"
 # 6. Restart Waybar
 echo "[6/6] Restarting Waybar..."
 pkill waybar 
 
 waybar -l off &
 
-echo "✅ Waybar setup complete under 'monarchy' 🍚"
+echo "✅ Waybar setup complete under 'monarchy'"
 
 exit
-
