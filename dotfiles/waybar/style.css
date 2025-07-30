@@ -1,0 +1,204 @@
+@import "colors.css";
+
+
+* {
+  border: none;
+  font-family: "Noto Sans";
+  font-weight: 700;
+  font-size: 14px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-right: -2px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  min-height: 20px;
+}
+
+window#waybar {
+  background: @background;
+  color:transparent;
+  min-height: 20px;
+  margin-left: -2px;
+  padding-left: 0px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#window {
+
+  color:transparent;
+  margin-bottom: 0px;
+  transition: none;
+  border-left: 2px solid @color2;
+  border-radius: 0px;
+}
+
+#workspaces button {
+  border-radius: 2px;
+  margin-bottom:3px;
+  padding-left:0px;
+  padding-right:20px;
+  border-left: 1px solid @color4;
+  color:@color7;
+}
+
+#workspaces button.active {
+  background-color: @color4;
+  border-left: 1px solid @color7;
+}
+
+#workspaces button:hover {
+  background-color: @color10;
+}
+
+#network {
+  transition: none;
+  color: @color5;
+  border-bottom: 2px solid @color5;
+  border-radius: 0px;
+}
+
+#pulseaudio {
+  transition: none;
+  color: @color3;
+  border-bottom: 2px solid @color3;
+  border-radius: 0px;
+}
+
+#custom-hyprpicker {
+  transition: none;
+  color: @color6;
+  border-bottom: 2px solid @color6;
+  border-radius: 0px;
+}
+
+#battery {
+  transition: none;
+  color: @color7;
+  border-bottom: 2px solid @color6;
+  border-radius: 0px;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @color7;
+  background-color: @color1;
+  border-bottom: 2px solid @color8;
+  border-radius: 0px;
+}
+
+#battery.critical:not(.charging) {
+  background-color: @color8;
+  color: @color8;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: @color5;
+    color: @color0;
+  }
+}
+
+#backlight {
+  transition: none;
+  color: @color10;
+  border-bottom: 2px solid @color3;
+  border-radius: 0px;
+}
+
+#clock,#pulseaudio {
+  transition: none;
+  color: @color6;
+  border-bottom: 2px solid @color14;
+  border-radius: 0px;
+}
+
+#memory {
+  transition: none;
+  color: @color5;
+  border-bottom: 2px solid @color5;
+  border-radius: 0px;
+}
+
+#cpu {
+  transition: none;
+  color: @color4;
+  border-bottom: 2px solid @color4;
+  border-radius: 0px;
+}
+
+#tray {
+  transition: none;
+  color: @color6;
+  background: transparent;
+}
+
+#custom-power {
+  transition: none;
+  color: @color0;
+  background: @color1;
+}
+
+#custom-wallpaper {
+  transition: none;
+  color: @color4;
+  border-bottom: 2px solid @color2;
+  border-radius: 0px;
+}
+
+#power-profiles-daemon,#temperature {
+  transition: none;
+  color: @color11;
+  border-bottom: 2px solid @color11;
+  border-radius: 0px;
+}
+#idle_inhibitor {
+  transition: none;
+  color: @color11;
+  border-bottom: 2px solid @color11;
+  border-radius: 0px;
+}
+
+#custom-swaync {
+  transition: none;
+  color: @color5;
+  border-bottom: 2px solid @color5;
+  border-radius: 0px;
+}
+
+#custom-home {
+  transition: none;
+  color: @color15;
+  border-radius: 0px;
+}
+
+#custom-clipboard {
+  transition: none;
+  color: @color3;
+  border-bottom: 2px solid @color3;
+  border-radius: 0px;
+}
+
+#custom-wlogout {
+  margin-bottom: -1px;
+  transition: none;
+  color: @color11;
+   border-bottom: 4px solid @color11;
+
+  border-radius: 0px;
+}
+
+#custom-hyprshot {
+  transition: none;
+  color: @color2;
+  border-bottom: 2px solid @color4;
+  border-radius: 0px;
+}
+
