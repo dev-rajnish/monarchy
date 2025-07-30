@@ -17,7 +17,7 @@ REPO="https://github.com/dev-rajnish/monarchy.git"
 TEMP="/tmp/$NAME"
 DEST="$HOME/.config/$NAME"
 #
-echo ` 1. Clone only waybar folder from repo (sparse clone)`
+echo "1. Clone only waybar folder from repo"
 if [ -d "$TEMP" ]; then
 	rm -rf "$TEMP"
 fi

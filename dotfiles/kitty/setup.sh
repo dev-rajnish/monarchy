@@ -17,7 +17,7 @@ REPO="https://github.com/dev-rajnish/monarchy.git"
 TEMP="/tmp/$NAME"
 DEST="$HOME/.config/$NAME"
 #
-echo ` 1. Clone only waybar folder from repo (sparse clone)`
+echo "1. Clone only waybar folder from repo"
 if [ -d "$TEMP" ]; then
 	rm -rf "$TEMP"
 fi
@@ -43,7 +43,7 @@ REQUIRED_PKGS=(
 	waybar fuzzel hyprland wl-copy nwg-clipman swaync waypaper
 	swww hyprland hyprpicker hyprlock hypridle hyprshot
 	pavucontrol wlogout wallust brightnessctl wpctl playerctl
-  kitty
+	kitty
 )
 MISSING_PKGS=()
 for pkg in "${REQUIRED_PKGS[@]}"; do
